@@ -115,5 +115,43 @@ def main():
     display_menu()
     choice = input("select an operation (1-7): ").strip()
     
-    if
+    if choice == "7":
+      print("Goodbye!")
+      break
+    
+    if choice in ["1", "2", "3", "4", "5", "6"]:
+      num1, num2 = get_numbers()
+      if num1 is None:
+        continue
+      
+      if choice == "1":
+        result = add(num1, num2)
+        print(f"result: {num1} + {num2} = {result}")
+      elif choice == "2":
+        result = subtract(num1, num2)
+        print(f"Result: {num1} - {num2} = {result}")
+      elif choice == "3":
+        result = multiply(num1, num2)
+        print(f"Result: {num1} * {num2} = {result}")
+      elif choice == "4":
+        result = divide(num1, num2)
+        if isinstance(result, str):
+          print(result)
+        else:
+          print(f"Result: {num1} / {num2} = {result}")
+      elif choice == "5":
+        result = modulus(num1, num2)
+        if isinstance(result, str):
+          print(result)
+        else:
+          print(f"Result: {num1} % {num2} = {result}")
+      elif choice == "6":
+        result = exponentiate(num1, num2)
+        print(f"Result: {num1} ** {num2} = {result}")
+  else:
+    print("Invalid choice. Please select a number from 1 to 7.")
+
+main() 
+
+
         
